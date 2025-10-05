@@ -13,7 +13,6 @@ import Location from "../components/location";
 import CongratulatoryMoney from "../components/congratulatoryMoney";
 import Share from "../components/share";
 import Quote from "../components/quote";
-import Song from "../assets/song.mp3";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -46,9 +45,9 @@ const IndexPage = () => {
   });
   return (
     <Wrapper>
-      <audio autoPlay loop>
+      {/* <audio autoPlay loop>
         <source src={Song} />
-      </audio>
+      </audio> */}
       <Title />
       <Greeting />
       <Gallery />
