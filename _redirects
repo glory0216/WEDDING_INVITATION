@@ -1,4 +1,7 @@
 
+# Handle SPA routing - redirect all routes to index.html
+/*    /index.html   200
+
 # @netlify/plugin-gatsby redirects start
 /api/* /.netlify/functions/__api 200
 # @netlify/plugin-gatsby redirects end
