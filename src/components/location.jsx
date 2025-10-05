@@ -41,56 +41,25 @@ const Map = styled.div`
 `;
 
 const Location = () => {
-  // 카카오 맵 불러오기
-
-  // <!-- 3. 실행 스크립트 -->
-  const executeScript = () => {
-    const scriptTag = document.createElement("script");
-    const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
-    "mapWidth" : "640",
-    "mapHeight" : "360"
-  }).render();`);
-    scriptTag.appendChild(inlineScript);
-    document.body.appendChild(scriptTag);
-  };
-
-  // <!-- 2. 설치 스크립트 * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다. -->
-  // document.write 문제가 발생해서 해당 파일을 직접 가져온다음 수정했음
-  const InstallScript = () => {
-    (function () {
-      let c = window.location.protocol === "https:" ? "https:" : "http:";
-      let a = "16137cec";
-
-      if (window.daum && window.daum.roughmap && window.daum.roughmap.cdn) {
-        return;
-      }
-      window.daum = window.daum || {};
-      window.daum.roughmap = {
-        cdn: a,
-        URL_KEY_DATA_LOAD_PRE: c + "//t1.daumcdn.net/roughmap/",
-        url_protocal: c,
-      };
-      let b =
-        c +
-        "//t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/" +
-        a +
-        "/roughmapLander.js";
-
-      // document.write -> doumnet.body.append로 수정
-      const scriptTag = document.createElement("script");
-      scriptTag.src = b;
-      document.body.append(scriptTag);
-      scriptTag.onload = () => {
-        executeScript();
-      };
-    })();
-  };
-
+  // 네이버맵 임베드 방식으로 지도 표시
   useEffect(() => {
-    InstallScript();
-  }, [InstallScript]);
+    const mapContainer = document.getElementById('naverMap');
+    if (mapContainer) {
+      // 네이버맵 임베드 지도
+      mapContainer.innerHTML = `
+        <iframe 
+          src="https://map.naver.com/v5/search/%EB%8D%94%EC%B1%84%ED%94%8C%EC%95%B3%20%EC%B2%AD%EB%8B%B4?c=15,0,0,0,dh"
+          width="100%" 
+          height="360" 
+          frameborder="0" 
+          style="border:0; border-radius: 8px;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      `;
+    }
+  }, []);
 
   return (
     <Wrapper>
@@ -98,28 +67,41 @@ const Location = () => {
         <Title>오시는 길</Title>
       </Divider>
       <Image src={Flower} />
-      <Map
-        id="daumRoughmapContainer1652464367301"
-        className="root_daum_roughmap root_daum_roughmap_landing"
-      ></Map>
+      <Map id="naverMap"></Map>
       <Content>
-        대구 수성구 두산동 888-2번지
+        서울 강남구 선릉로 757
         <br />
-        호텔수성 수성스퀘어 3층 피오니홀
-        <br />
-        <br />
-        <Title>버스 이용시</Title>
+        더채플앳 청담 3층 커티지홀
         <br />
         <br />
-        410-1, 401 호텔수성 앞 하차
-        <br />
-        수성1-1, 수성3-1, 814 TBC방송국 앞 하차
+        <Title>버스 이용 시</Title>
         <br />
         <br />
-        <Title>지하철 이용시</Title>
+        간선 : 301, 342, 472 / 지선 : 3011, 4312
+        <br />
+        영동고교 앞 하차 후 학동사거리 방면 100m내 건물
         <br />
         <br />
-        3호선 수성못역 하차 (도보 10분)
+        <Title>지하철 이용 시</Title>
+        <br />
+        <br />
+        7호선, 수인분당선 강남구청역 3-1번 출구로 나와
+        <br />
+        좌측 방향으로 570m 도보 후 좌측 건물
+        <br />
+        <br />
+        <Title>셔틀버스 이용 시</Title>
+        <br />
+        <br />
+        강남구청역 3번 출구 (7호선, 수인분당선) 앞
+        <br />
+        <br />
+        <Title>자가용 이용 시</Title>
+        <br />
+        <br />
+        영동대교 방면 : 영동대교 남단에서 청담사거리 방면 -> 학동사거리 방면 1.5km 직진 -> 학동사거리에서 강남구청 방면으로 좌회전 후 50m 앞 우측 건물
+        <br />
+        성수대교 방면 : 성수대교 남단에서 도산공원 방면 1.5km 직진 -> 도산공원사거리에서 영동대교 방면 좌회전 -> 학동사거리에서 강남구청 방면으로 우회전 후 50m 앞 우측 건물
       </Content>
     </Wrapper>
   );

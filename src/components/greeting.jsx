@@ -59,19 +59,33 @@ const Greeting = () => {
       </Divider>
       <Image data-aos="fade-up" src={Flower} />
       <Content data-aos="fade-up">
-        서로 마주 보며 다져온 사랑을
+        함께 가자, 먼 길
+        <br />
+        너와 함께라면
+        <br />
+        멀어도 가깝고
+        <br />
+        아름답지 않아도
+        <br />
+        아름다운 길
+        <br />
+        - 나태주, '먼 길' 중에서
         <br />
         <br />
-        이제 함께 한곳을 바라보며 걸어갈 수 있는
+        두 사람이 함께 걷는 첫 걸음에
+        <br />
+        소중한 분들을 모시고자 합니다.
+        <br />
+        함께라면, 먼 길도
+        <br />
+        즐거운 여행이 될 것 같습니다
         <br />
         <br />
-        큰 사랑으로 키우고자 합니다.
+        저희의 시작을 함께 축복해 주신다면
+        <br /> 
+        더 없는 기쁨으로 간직하겠습니다.
         <br />
         <br />
-        저희 두 사람이 사랑의 이름으로 지켜나갈 수 있게
-        <br />
-        <br />
-        앞날을 축복해 주시면 감사하겠습니다.
       </Content>
       <GroomBride data-aos="fade-up">
         {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
