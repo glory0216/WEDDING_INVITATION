@@ -6,6 +6,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Noto Sans KR:300,400,500,700,900`
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {},

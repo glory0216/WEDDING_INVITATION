@@ -24,7 +24,7 @@ const Image = styled.img`
   padding-bottom: 42px;
 `;
 
-const Content = styled.p`
+const Content = styled.div`
   font-size: 0.875rem;
   line-height: 1.75;
   opacity: 0.75;
@@ -33,6 +33,65 @@ const Content = styled.p`
   padding-top: 42px;
   padding-bottom: 42px;
   margin: 0;
+`;
+
+const TransportSection = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0px;
+  padding: 20px 0;
+  border-bottom: 2px solid #ccc;
+  
+  &:first-child {
+    margin-top: 0;
+    border-top: 2px solid #ccc;
+  }
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+`;
+
+const TransportContent = styled.div`
+  flex: 1;
+  text-align: left;
+`;
+
+const TransportTitle = styled.h3`
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 12px 0;
+`;
+
+const TransportDetails = styled.div`
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #444;
+  font-weight: 500;
+`;
+
+const ParkingInfo = styled.div`
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+  border-left: 4px solid var(--title-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+`;
+
+const ParkingTitle = styled.h4`
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 12px 0;
+`;
+
+const ParkingDetails = styled.div`
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #444;
+  font-weight: 500;
 `;
 
 const Map = styled.div`
@@ -69,39 +128,55 @@ const Location = () => {
       <Image src={Flower} />
       <Map id="naverMap"></Map>
       <Content>
-        서울 강남구 선릉로 757
-        <br />
-        더채플앳 청담 3층 커티지홀
-        <br />
-        <br />
-        <Title>버스 이용 시</Title>
-        <br />
-        <br />
-        간선 : 301, 342, 472 / 지선 : 3011, 4312
-        <br />
-        영동고교 앞 하차 후 학동사거리 방면 100m내 건물
-        <br />
-        <br />
-        <Title>지하철 이용 시</Title>
-        <br />
-        <br />
-        7호선, 수인분당선 강남구청역 3-1번 출구로 나와
-        <br />
-        좌측 방향으로 570m 도보 후 좌측 건물
-        <br />
-        <br />
-        <Title>셔틀버스 이용 시</Title>
-        <br />
-        <br />
-        강남구청역 3번 출구 (7호선, 수인분당선) 앞
-        <br />
-        <br />
-        <Title>자가용 이용 시</Title>
-        <br />
-        <br />
-        영동대교 방면 : 영동대교 남단에서 청담사거리 방면 -> 학동사거리 방면 1.5km 직진 -> 학동사거리에서 강남구청 방면으로 좌회전 후 50m 앞 우측 건물
-        <br />
-        성수대교 방면 : 성수대교 남단에서 도산공원 방면 1.5km 직진 -> 도산공원사거리에서 영동대교 방면 좌회전 -> 학동사거리에서 강남구청 방면으로 우회전 후 50m 앞 우측 건물
+        <TransportSection>
+          <TransportContent>
+            <TransportTitle>지하철</TransportTitle>
+            <TransportDetails>
+              강남구청역 3-1번 출구로 나와서 <br />
+              좌측 방향으로 570m 도보 후 <br />
+              좌측 건물
+            </TransportDetails>
+          </TransportContent>
+        </TransportSection>
+
+        <TransportSection>
+          <TransportContent>
+            <TransportTitle>자가용</TransportTitle>
+            <TransportDetails>
+              '더채플앳 청담' 검색<br />
+              주소: 서울특별시 강남구 선릉로 757
+            </TransportDetails>
+          </TransportContent>
+        </TransportSection>
+
+        <TransportSection>
+          <TransportContent>
+            <TransportTitle>셔틀버스</TransportTitle>
+            <TransportDetails>
+              강남구청역 3번 출구 앞 <br />  
+              (10분 간격 운행)
+            </TransportDetails>
+          </TransportContent>
+        </TransportSection>
+
+        <TransportSection>
+          <TransportContent>
+            <TransportTitle>버스</TransportTitle>
+            <TransportDetails>
+              간선 : 301, 342, 472 <br /> 
+              지선 : 3011, 4312 <br />
+              영동고교 앞 하차 후 학동사거리 방면 100m내 건물
+            </TransportDetails>
+          </TransportContent>
+        </TransportSection>
+
+        <ParkingInfo>
+          <ParkingTitle>주차 안내</ParkingTitle>
+          <ParkingDetails>
+            1시간 30분 무료 자동 적용<br />
+            초과시 10분당 1,000원 주차비 발생
+          </ParkingDetails>
+        </ParkingInfo>
       </Content>
     </Wrapper>
   );

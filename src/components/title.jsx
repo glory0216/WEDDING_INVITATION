@@ -38,14 +38,22 @@ const WeddingInvitation = styled.p`
 `;
 
 const GroomBride = styled.p`
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 400;
   opacity: 0.9;
-  margin-bottom: 16px;
+  margin: 0 40px 24px 40px;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  color: var(--title-color);
+`;
+
+const Separator = styled.span`
+  margin: 0 20px;
+  opacity: 0.6;
 `;
 
 const Schedule = styled.p`
-  font-size: 1.06rem;
+  font-size: 1.2rem;
   opacity: 0.65;
   margin-bottom: 24px;
 `;
@@ -55,17 +63,19 @@ const Title = () => {
       <TitleWrapper>
         <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
         <GroomBride>
-          {GROOM_NAME} &#38; {BRIDE_NAME}
+          이영광<Separator>|</Separator>박미선
         </GroomBride>
-        <Schedule>
-          {WEDDING_DATE}
-          <br />
-          {WEDDING_LOCATION}
-        </Schedule>
       </TitleWrapper>
       <VideoBackground autoPlay loop muted playsInline={true}>
         <source src={BackgroundVideo} type="video/mp4" />
       </VideoBackground>
+      <TitleWrapper>
+        <Schedule style={{ fontSize: "1.0rem" }}>
+            {WEDDING_DATE}
+            <br />
+            {WEDDING_LOCATION}
+        </Schedule>
+      </TitleWrapper>
     </Layout>
   );
 };

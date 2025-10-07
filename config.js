@@ -3,19 +3,19 @@ export const KAKAOTALK_API_TOKEN = "JavaScript 키 입력";
 export const KAKAOTALK_SHARE_IMAGE =
   "https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg";
 
-export const WEDDING_DATE = "2025년 12월 20일, 토요일 오후 2시 00분";
+export const WEDDING_DATE = "2025년 12월 20일, 토요일 오후 2시";
 export const WEDDING_LOCATION = "더채플앳 청담, 3층 커티지홀";
 
-export const GROOM_NAME = "이영광";
-export const GROOM_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const GROOM_NAME = "영광";
+export const GROOM_ACCOUNT_NUMBER = "***-***-******";
 export const GROOM_FATHER_NAME = "이기산";
-export const GROOM_FATHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const GROOM_FATHER_ACCOUNT_NUMBER = "***-***-******";
 export const GROOM_MOTHER_NAME = "이정옥";
-export const GROOM_MOTHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const GROOM_MOTHER_ACCOUNT_NUMBER = "***-***-******";
 
-export const BRIDE_NAME = "박미선";
-export const BRIDE_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const BRIDE_NAME = "미선";
+export const BRIDE_ACCOUNT_NUMBER = "***-***-******";
 export const BRIDE_FATHER_NAME = "박우춘";
-export const BRIDE_FATHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const BRIDE_FATHER_ACCOUNT_NUMBER = "***-***-******";
 export const BRIDE_MOTHER_NAME = "김해숙";
-export const BRIDE_MOTHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const BRIDE_MOTHER_ACCOUNT_NUMBER = "***-***-******";

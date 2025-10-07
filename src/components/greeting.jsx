@@ -15,10 +15,11 @@ const Wrapper = styled.div`
   padding-top: 42px;
   margin: 0 auto;
   width: 70%;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const Title = styled.p`
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
@@ -27,7 +28,7 @@ const Title = styled.p`
 `;
 
 const Content = styled.p`
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 16px;
@@ -36,12 +37,22 @@ const Content = styled.p`
 `;
 
 const GroomBride = styled.p`
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   line-height: 1.75;
   opacity: 0.85;
   margin-bottom: 0px;
   width: 100%;
   text-align: center;
+`;
+
+// const BoldName = styled.span`
+//   font-weight: 900;
+//   font-size: 1.2rem;
+// `;
+
+const ParentInfo = styled.span`
+  font-size: 0.85em;
+  opacity: 0.8;
 `;
 
 const Image = styled.img`
@@ -59,15 +70,20 @@ const Greeting = () => {
       </Divider>
       <Image data-aos="fade-up" src={Flower} />
       <Content data-aos="fade-up">
-        함께 가자, 먼 길
+        함께 가자,
+        <br />
+        먼 길
+        <br />
         <br />
         너와 함께라면
         <br />
         멀어도 가깝고
         <br />
+        <br />
         아름답지 않아도
         <br />
         아름다운 길
+        <br />
         <br />
         - 나태주, '먼 길' 중에서
         <br />
@@ -75,6 +91,7 @@ const Greeting = () => {
         두 사람이 함께 걷는 첫 걸음에
         <br />
         소중한 분들을 모시고자 합니다.
+        <br />
         <br />
         함께라면, 먼 길도
         <br />
@@ -88,9 +105,9 @@ const Greeting = () => {
         <br />
       </Content>
       <GroomBride data-aos="fade-up">
-        {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
+        {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ParentInfo>의 장남</ParentInfo> {GROOM_NAME}
         <br />
-        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 장녀 {BRIDE_NAME}
+        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ParentInfo>의 장녀</ParentInfo> {BRIDE_NAME}
       </GroomBride>
     </Wrapper>
   );
